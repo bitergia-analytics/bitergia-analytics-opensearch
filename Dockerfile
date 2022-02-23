@@ -22,6 +22,15 @@ ENV PATH=/usr/share/opensearch/bin/:$PATH
 # Secrets and keys can be configured once the container
 # is running using 'opensearch-keystore' command.
 #
-RUN opensearch-plugin install --batch repository-s3
-RUN opensearch-plugin install --batch repository-gcs
+RUN opensearch-plugin install --batch repository-s3 && \
+    opensearch-plugin install --batch repository-gcs
 RUN opensearch-keystore create
+
+# Remove plugins not supported on this release
+RUN opensearch-plugin remove --purge opensearch-alerting && \
+    opensearch-plugin remove --purge opensearch-anomaly-detection && \
+    opensearch-plugin remove --purge opensearch-asynchronous-search && \
+    opensearch-plugin remove --purge opensearch-knn && \
+    opensearch-plugin remove --purge opensearch-observability && \
+    opensearch-plugin remove --purge opensearch-reports-scheduler && \
+    opensearch-plugin remove --purge opensearch-sql
