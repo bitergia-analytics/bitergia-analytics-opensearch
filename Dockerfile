@@ -1,4 +1,4 @@
-FROM opensearchproject/opensearch:1.2.4
+FROM opensearchproject/opensearch:1.3.2
 
 LABEL maintainer="Santiago Dueñas <sduenas@bitergia.com>"
 LABEL org.opencontainers.image.title="Bitergia Analytics OpenSearch"
@@ -31,6 +31,7 @@ RUN opensearch-plugin remove --purge opensearch-alerting && \
     opensearch-plugin remove --purge opensearch-anomaly-detection && \
     opensearch-plugin remove --purge opensearch-asynchronous-search && \
     opensearch-plugin remove --purge opensearch-knn && \
+    opensearch-plugin remove --purge opensearch-ml && \
     opensearch-plugin remove --purge opensearch-observability && \
     opensearch-plugin remove --purge opensearch-reports-scheduler && \
     opensearch-plugin remove --purge opensearch-sql
