@@ -29,9 +29,7 @@ RUN opensearch-keystore create
 # Remove plugins not supported on this release
 RUN opensearch-plugin remove --purge opensearch-alerting && \
     opensearch-plugin remove --purge opensearch-anomaly-detection && \
-    opensearch-plugin remove --purge opensearch-asynchronous-search && \
     opensearch-plugin remove --purge opensearch-knn && \
     opensearch-plugin remove --purge opensearch-ml && \
     opensearch-plugin remove --purge opensearch-observability && \
-    opensearch-plugin remove --purge opensearch-reports-scheduler && \
-    opensearch-plugin remove --purge opensearch-sql
+    opensearch-plugin remove --purge opensearch-reports-scheduler
