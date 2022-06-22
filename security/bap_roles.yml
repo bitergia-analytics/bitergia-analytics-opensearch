@@ -1,0 +1,63 @@
+bap_anonymous_access_role:
+  reserved: true
+  hidden: false
+  description: "Provides anonymous access to BAP dashboards"
+  cluster_permissions:
+    - "cluster_composite_ops_ro"
+  index_permissions:
+    - index_patterns:
+        - ".kibana"
+        - ".kibana_*"
+        - ".opensearch_dashboards"
+        - ".opensearch_dashboards_*"
+        - "bap_*"
+        - "grimoirelab_*"
+      allowed_actions:
+        - "read"
+
+bap_user_role:
+  reserved: true
+  hidden: false
+  description: "Provides minimum permisions to access BAP dashboards and tools"
+  cluster_permissions:
+    - "cluster_composite_ops_ro"
+  index_permissions:
+    - index_patterns:
+        - ".kibana"
+        - ".kibana_*"
+        - ".opensearch_dashboards"
+        - ".opensearch_dashboards_*"
+        - "bap_*"
+        - "grimoirelab_*"
+      allowed_actions:
+      - "read"
+
+bap_privileged_user_role:
+  reserved: true
+  hidden: false
+  description: "Provides BAP user permissions plus privileges to modify dashboards and visualizations"
+  cluster_permissions:
+    - "cluster_composite_ops"
+  index_permissions:
+    - index_patterns:
+      - "bap_*"
+      - "grimoirelab_*"
+      allowed_actions:
+      - "read"
+    - index_patterns:
+      - ".kibana"
+      - ".kibana_*"
+      - ".opensearch_dashboards"
+      - ".opensearch_dashboards_*"
+      allowed_actions:
+      - "read"
+      - "delete"
+      - "manage"
+      - "index"
+    - index_patterns:
+      - ".tasks"
+      - ".management-beats"
+      - "*:.tasks"
+      - "*:.management-beats"
+      allowed_actions:
+      - "indices_all"
