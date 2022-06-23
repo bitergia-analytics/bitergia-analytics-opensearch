@@ -20,9 +20,9 @@ ENV PATH=/usr/share/opensearch/bin/:$PATH
 # Add BAP roles to the security configuration
 #
 
-COPY security/bap_roles.yml /tmp/
-RUN cat /tmp/bap_roles.yml >> plugins/opensearch-security/securityconfig/roles.yml && \
-    rm /tmp/bap_roles.yml
+COPY security/bap_roles.yml bap_roles.yml
+RUN cat bap_roles.yml >> plugins/opensearch-security/securityconfig/roles.yml && \
+    rm bap_roles.yml
 
 #
 # Plugins installation
