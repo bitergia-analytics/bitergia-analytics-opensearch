@@ -17,6 +17,14 @@ WORKDIR /usr/share/opensearch
 ENV PATH=/usr/share/opensearch/bin/:$PATH
 
 #
+# Add BAP roles to the security configuration
+#
+
+COPY security/bap_roles.yml /tmp/
+RUN cat /tmp/bap_roles.yml >> plugins/opensearch-security/securityconfig/roles.yml && \
+    rm /tmp/bap_roles.yml
+
+#
 # Plugins installation
 #
 # Secrets and keys can be configured once the container
