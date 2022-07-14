@@ -12,6 +12,8 @@ bap_anonymous_access_role:
         - ".opensearch_dashboards_*"
         - "bap_*"
         - "grimoirelab_*"
+        - "custom_*"
+        - "c_*"
       allowed_actions:
         - "read"
 
@@ -29,8 +31,10 @@ bap_user_role:
         - ".opensearch_dashboards_*"
         - "bap_*"
         - "grimoirelab_*"
+        - "custom_*"
+        - "c_*"
       allowed_actions:
-      - "read"
+        - "read"
 
 bap_privileged_user_role:
   reserved: true
@@ -40,24 +44,26 @@ bap_privileged_user_role:
     - "cluster_composite_ops"
   index_permissions:
     - index_patterns:
-      - "bap_*"
-      - "grimoirelab_*"
+        - "bap_*"
+        - "grimoirelab_*"
+        - "custom_*"
+        - "c_*"
       allowed_actions:
-      - "read"
+        - "read"
     - index_patterns:
-      - ".kibana"
-      - ".kibana_*"
-      - ".opensearch_dashboards"
-      - ".opensearch_dashboards_*"
+        - ".kibana"
+        - ".kibana_*"
+        - ".opensearch_dashboards"
+        - ".opensearch_dashboards_*"
       allowed_actions:
-      - "read"
-      - "delete"
-      - "manage"
-      - "index"
+        - "read"
+        - "delete"
+        - "manage"
+        - "index"
     - index_patterns:
-      - ".tasks"
-      - ".management-beats"
-      - "*:.tasks"
-      - "*:.management-beats"
+        - ".tasks"
+        - ".management-beats"
+        - "*:.tasks"
+        - "*:.management-beats"
       allowed_actions:
-      - "indices_all"
+        - "indices_all"
