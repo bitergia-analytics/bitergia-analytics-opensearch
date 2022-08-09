@@ -1,3 +1,25 @@
+bap_mordred_role:
+  reserved: true
+  hidden: false
+  description: "Provides enough permisions to mordred to operate"
+  cluster_permissions:
+    - "cluster_composite_ops"
+    - "cluster_monitor"
+    - "indices:data/write/bulk"
+    - "indices:data/read/scroll/clear"
+  index_permissions:
+    - index_patterns:
+        - "bap_*"
+        - "grimoirelab_*"
+        - "custom_*"
+        - "c_*"
+      allowed_actions:
+        - "indices_all"
+    - index_patterns:
+        - "*"
+      allowed_actions:
+        - "manage_aliases"
+
 bap_anonymous_access_role:
   reserved: true
   hidden: false
