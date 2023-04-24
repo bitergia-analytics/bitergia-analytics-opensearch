@@ -1,4 +1,7 @@
-FROM opensearchproject/opensearch:1.3.2
+# Copyright (C) Bitergia
+# GPLv3 License
+
+FROM opensearchproject/opensearch:2.6.0
 
 LABEL maintainer="Santiago Dueñas <sduenas@bitergia.com>"
 LABEL org.opencontainers.image.title="Bitergia Analytics OpenSearch"
@@ -21,7 +24,7 @@ ENV PATH=/usr/share/opensearch/bin/:$PATH
 #
 
 COPY security/bap_roles.yml bap_roles.yml
-RUN cat bap_roles.yml >> plugins/opensearch-security/securityconfig/roles.yml && \
+RUN cat bap_roles.yml >> config/opensearch-security/roles.yml && \
     rm bap_roles.yml
 
 #
@@ -35,9 +38,7 @@ RUN opensearch-plugin install --batch repository-s3 && \
 RUN opensearch-keystore create
 
 # Remove plugins not supported on this release
-RUN opensearch-plugin remove --purge opensearch-alerting && \
-    opensearch-plugin remove --purge opensearch-anomaly-detection && \
+RUN opensearch-plugin remove --purge opensearch-neural-search && \
     opensearch-plugin remove --purge opensearch-knn && \
     opensearch-plugin remove --purge opensearch-ml && \
-    opensearch-plugin remove --purge opensearch-observability && \
     opensearch-plugin remove --purge opensearch-reports-scheduler
