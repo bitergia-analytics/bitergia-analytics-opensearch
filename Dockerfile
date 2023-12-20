@@ -1,7 +1,7 @@
 # Copyright (C) Bitergia
 # GPLv3 License
 
-FROM opensearchproject/opensearch:2.7.0
+FROM opensearchproject/opensearch:2.10.0
 
 LABEL maintainer="Santiago Dueñas <sduenas@bitergia.com>"
 LABEL org.opencontainers.image.title="Bitergia Analytics OpenSearch"
@@ -41,4 +41,5 @@ RUN opensearch-keystore create
 RUN opensearch-plugin remove --purge opensearch-neural-search && \
     opensearch-plugin remove --purge opensearch-knn && \
     opensearch-plugin remove --purge opensearch-ml && \
-    opensearch-plugin remove --purge opensearch-reports-scheduler
+    opensearch-plugin remove --purge opensearch-reports-scheduler && \
+    opensearch-plugin remove --purge opensearch-security-analytics
