@@ -1,5 +1,13 @@
 # Releases
 
+## bitergia-analytics-opensearch 0.15.0 - (2024-01-02)
+
+**New features:**
+
+ * Upgrade to OpenSerach 2.11.1\
+   OpenSearch version has been upgraded to 2.11.1.
+
+
   ## bitergia-analytics-opensearch 0.14.2 - (2023-12-26)
   
   * No changes on this component. The version is bumped to align it
