@@ -89,3 +89,8 @@ bap_privileged_user_role:
         - "*:.management-beats"
       allowed_actions:
         - "indices_all"
+
+bap_plugins_visibility:
+  reserved: true
+  hidden: false
+  description: "Hides links to plugins on the sidebar menu"
