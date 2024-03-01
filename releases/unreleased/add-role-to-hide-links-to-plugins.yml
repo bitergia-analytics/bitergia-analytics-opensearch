@@ -1,0 +1,8 @@
+---
+title: Add role to hide links to plugins
+category: added
+author: Eva Millán <evamillan@bitergia.com>
+issue: null
+notes: >
+  Adds the 'bap_plugins_visibility' role, which hides
+  links to plugins for the user on OpenSearch Dashboards.
