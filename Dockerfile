@@ -1,7 +1,7 @@
 # Copyright (C) Bitergia
 # GPLv3 License
 
-FROM opensearchproject/opensearch:2.11.1
+FROM opensearchproject/opensearch:2.16.0
 
 LABEL maintainer="Santiago Dueñas <sduenas@bitergia.com>"
 LABEL org.opencontainers.image.title="Bitergia Analytics OpenSearch"
