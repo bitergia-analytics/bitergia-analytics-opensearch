@@ -1,0 +1,8 @@
+---
+title: '`opensearch-skills` plugin removed'
+category: fixed
+author: Jose Javier Merchante <jjmerchante@bitergia.com>
+issue: null
+notes: >
+  Remove `opensearch-skills` plugin, which depends on
+  the `opensearch-ml` plugin that has been removed.
