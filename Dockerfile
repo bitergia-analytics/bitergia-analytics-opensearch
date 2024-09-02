@@ -40,6 +40,7 @@ RUN opensearch-keystore create
 # Remove plugins not supported on this release
 RUN opensearch-plugin remove --purge opensearch-neural-search && \
     opensearch-plugin remove --purge opensearch-knn && \
+    opensearch-plugin remove --purge opensearch-skills && \
     opensearch-plugin remove --purge opensearch-ml && \
     opensearch-plugin remove --purge opensearch-reports-scheduler && \
     opensearch-plugin remove --purge opensearch-security-analytics
