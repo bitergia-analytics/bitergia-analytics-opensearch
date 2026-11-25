@@ -34,7 +34,8 @@ RUN cat bap_roles.yml >> config/opensearch-security/roles.yml && \
 # is running using 'opensearch-keystore' command.
 #
 RUN opensearch-plugin install --batch repository-s3 && \
-    opensearch-plugin install --batch repository-gcs
+    opensearch-plugin install --batch repository-gcs && \
+    opensearch-plugin install --batch repository-azure
 RUN opensearch-keystore create
 
 # Remove plugins not supported on this release

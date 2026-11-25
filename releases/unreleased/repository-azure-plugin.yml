@@ -1,0 +1,9 @@
+---
+title: Azure repository plugin
+category: added
+author: Jose Javier Merchante <jose.javier.merchante@eclipse-foundation.org>
+issue: null
+notes: >
+  Install the 'repository-azure' plugin to support snapshots
+  stored in Azure Blob Storage. Credentials can be configured
+  once the container is running using 'opensearch-keystore'.
