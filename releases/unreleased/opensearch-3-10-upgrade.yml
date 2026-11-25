@@ -1,0 +1,7 @@
+---
+title: OpenSearch 3.10.1 upgrade
+category: added
+author: Jose Javier Merchante <jose.javier.merchante@eclipse-foundation.org>
+issue: null
+notes: >
+  Update base image for Bitergia Analytics OpenSearch to 3.10.1.
